@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Grocery — Products</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 24px; max-width: 900px; margin: auto; }
+    header { display:flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid #eee; text-align: left; }
+    .pill { padding: 4px 8px; border-radius: 999px; background: #eef9f0; border: 1px solid #cfead5; }
+    a.btn { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Grocery — Products</h1>
+    <div><span class="pill">Wallet: RM {{ '%.2f'|format(balance) }}</span>
+      &nbsp; <a class="btn" href="/topup">Top Up</a></div>
+  </header>
+
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Spec</th><th>Price (RM)</th></tr>
+    </thead>
+    <tbody>
+      {% for p in products %}
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.spec or '-' }}</td>
+        <td>{{ '%.2f'|format(p.price) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

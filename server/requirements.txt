@@ -1,0 +1,10 @@
+Flask~=3.0.3
+SQLAlchemy~=2.0.32
+psycopg2-binary
+python-dotenv~=1.0.1
+flask-cors~=4.0.2
+pytz~=2024.1
+pandas~=2.2.3
+openpyxl~=3.1.5
+PyJWT~=2.10.1
+xlsxwriter~=3.2.0
